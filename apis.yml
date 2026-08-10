@@ -1,23 +1,84 @@
 aid: cooler-heads
 name: Cooler Heads
-description: 'Cooler Heads is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+x-enrichment:
+  date: '2026-08-09'
+  status: enriched
+  artifacts_added: 7
+  pass: local-v1
+description: 'Cooler Heads Care, Inc. is a San Diego medical device company founded
+  in 2018 by Kate Dilligan that makes Amma, an FDA-cleared Portable Scalp Cooling
+  System (PSCS) used to reduce chemotherapy-induced hair loss. Amma circulates chilled
+  fluid through a fitted cap to constrict scalp blood vessels and limit chemotherapy
+  delivery to hair follicles, and is designed to be portable enough that patients can
+  keep cooling outside the infusion chair. The company sells to infusion centers and
+  oncology practices and publishes patient, provider, reimbursement and training material
+  on its own site. It ships no developer API, SDK or public API documentation; its only
+  machine-readable public surface is the Wix-platform site MCP endpoint and llms.txt
+  served from its own host.'
+image: https://static.wixstatic.com/media/6583f1_f14833176fd248229e8238fdeb4af315~mv2.jpg/v1/fill/w_1600,h_840,al_c/6583f1_f14833176fd248229e8238fdeb4af315~mv2.jpg
 url: https://raw.githubusercontent.com/api-evangelist/cooler-heads/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
+x-tier: profile
 x-tier-reason: harvest
 specificationVersion: '0.20'
 created: '2026-08-09'
 modified: '2026-08-09'
 tags:
 - Company
-apis: []
+- Medical Devices
+- Health Care
+- Oncology
+- Scalp Cooling
+- Patient Care
+- MCP
+apis:
+- name: Cooler Heads Site MCP
+  description: 'Anonymous Model Context Protocol endpoint served from the Cooler Heads
+    web host. It is the Wix Site MCP surface (platform-provided, not a first-party
+    Cooler Heads API): nine tools that let an agent read business details, search
+    site content, look up the Wix API documentation applicable to this site, mint a
+    visitor token, and call Wix site APIs on a visitor''s behalf. No authentication
+    is required to connect; only public site information is exposed.'
+  humanURL: https://www.coolerheads.com/
+  baseURL: https://www.coolerheads.com/_api/mcp
+  tags:
+  - MCP
+  - Agent
+  properties:
+  - type: MCPServer
+    url: mcp/cooler-heads-mcp.yml
+  - type: Authentication
+    url: authentication/cooler-heads-authentication.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/cooler-heads-domain-security.yml
 - type: Website
+  url: https://www.coolerheads.com/
+- type: MCPServer
+  url: mcp/cooler-heads-mcp.yml
+- type: LLMsTxt
+  url: llms/cooler-heads-llms.txt
+- type: WellKnown
+  url: well-known/cooler-heads-well-known.yml
+- type: Authentication
+  url: authentication/cooler-heads-authentication.yml
+- type: Conformance
+  url: conformance/cooler-heads-conformance.yml
+- type: Blog
+  url: https://www.coolerheads.com/blog
+- type: BlogRSS
+  url: https://www.coolerheads.com/blog-feed.xml
+- type: Support
+  url: https://www.coolerheads.com/contact
+- type: Press
+  url: https://www.coolerheads.com/press
+- type: LinkedIn
+  url: https://www.linkedin.com/company/cooler-heads-technology/
+- type: SecondaryMarketListing
   url: https://forgeglobal.com/cooler-heads_stock/

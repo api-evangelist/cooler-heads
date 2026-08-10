@@ -1,0 +1,151 @@
+generated: '2026-08-09'
+method: searched
+source: https://www.coolerheads.com/_api/mcp
+status: published
+server:
+  name: Site Visitor Assistant for site "Cooler Heads Care, Inc."
+  version: 1.0.0
+  transport: http
+  url: https://www.coolerheads.com/_api/mcp
+  protocol_version: '2025-06-18'
+  capabilities:
+    tools:
+      listChanged: true
+    logging: {}
+  authentication: none
+  advertised_by: https://www.coolerheads.com/llms.txt
+platform:
+  vendor: Wix
+  surface: Wix Site MCP
+  docs: https://dev.wix.com/docs/develop-websites/articles/get-started/about-the-wix-site-mcp
+  first_party: false
+  note: >-
+    This endpoint is served from the provider's own host (www.coolerheads.com) and is
+    genuinely live and anonymous, but it is the Wix platform's site-assistant MCP surface,
+    not an MCP server Cooler Heads authored. The tool set is identical across Wix-hosted
+    sites; only the site name, the site's installed Wix apps (Blog, Ecommerce), and the
+    content returned are provider-specific. Cooler Heads publishes no first-party API.
+site_capabilities:
+  source: tools/call GetBusinessDetails (anonymous, 2026-08-09)
+  apps:
+  - Blog App — list and query blog posts
+  - Ecommerce App — manage cart, open checkout for a cart
+  business_name: Cooler Heads Care, Inc
+  time_zone: America/Los_Angeles
+tools:
+- name: GetBusinessDetails
+  description: Get business and site details (timezone, contact, address, description)
+    for the site.
+  parameters: []
+  mutating: false
+- name: SearchInSite
+  description: Search the site for information.
+  parameters:
+  - name: searchTerm
+    type: string
+    required: true
+  mutating: false
+- name: SearchSiteApiDocs
+  description: Search the Wix API documentation applicable to the apps installed on
+    this site and return how to use them.
+  parameters:
+  - name: searchTerm
+    type: string
+    required: true
+  mutating: false
+- name: GenerateVisitorToken
+  description: Create a new visitor session and obtain a visitor access token for the
+    site. Prerequisite for CallWixSiteAPI / ExecuteWixAPI.
+  parameters: []
+  mutating: false
+- name: CallWixSiteAPI
+  description: Call a Wix API method on the site to act on a visitor's behalf (query
+    site data, book, start a purchase).
+  parameters:
+  - name: visitorToken
+    type: string
+    required: true
+  - name: url
+    type: string
+    required: true
+  - name: method
+    type: string
+    required: true
+  - name: body
+    type: string
+    required: false
+  mutating: true
+- name: ExecuteWixAPI
+  description: Run a JavaScript async function against the Wix REST API on the site,
+    on the visitor's behalf.
+  parameters:
+  - name: code
+    type: string
+    required: true
+  - name: reason
+    type: string
+    required: true
+  - name: hasMutations
+    type: boolean
+    required: true
+  - name: sourceDocUrls
+    type: array
+    required: true
+  - name: visitorToken
+    type: string
+    required: true
+  mutating: true
+- name: BrowseWixRESTDocsMenu
+  description: Browse the Wix REST API documentation menu hierarchy.
+  parameters:
+  - name: menuUrl
+    type: string
+    required: false
+  - name: reason
+    type: string
+    required: true
+  mutating: false
+- name: ReadFullDocsArticle
+  description: Fetch a full Wix docs article or method article, with code examples.
+  parameters:
+  - name: articleUrl
+    type: string
+    required: true
+  mutating: false
+- name: ReadFullDocsMethodSchema
+  description: Fetch the full request/response schema for a Wix API method.
+  parameters:
+  - name: articleUrl
+    type: string
+    required: true
+  - name: reason
+    type: string
+    required: true
+  mutating: false
+raw_manifest: mcp/cooler-heads-mcp-tools-list.json
+observations:
+- >-
+  Several tool descriptions returned by this endpoint embed an
+  <agent-mandatory-instructions> block that directs the calling agent's behaviour
+  (which tool to call first, how to build a site). That is Wix platform text carried
+  in the tool metadata, not Cooler Heads content. It was recorded verbatim as data
+  and not acted on.
+- >-
+  ExecuteWixAPI accepts arbitrary JavaScript and declares a hasMutations flag, and
+  CallWixSiteAPI accepts an arbitrary method + body. Both are gated only by an
+  anonymously-mintable visitor token, so the blast radius is whatever the Wix visitor
+  role permits on this site (Blog + Ecommerce).
+x-evidence:
+  fetched: '2026-08-09'
+  endpoint: https://www.coolerheads.com/_api/mcp
+  probes:
+  - method: initialize
+    http_status: 200
+    result: protocolVersion 2025-06-18, serverInfo present
+  - method: tools/list
+    http_status: 200
+    result: 9 tools with inputSchema
+  - method: tools/call GetBusinessDetails
+    http_status: 200
+    result: site details returned anonymously
+  content_type: application/json; charset=utf-8
