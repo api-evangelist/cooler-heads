@@ -27,6 +27,14 @@ modified: '2026-08-09'
 tags:
 - Company
 - Medical Devices
+- Healthcare
+- Oncology
+- Scalp Cooling
+- Patient Care
+- MCP
+tags_raw:
+- Company
+- Medical Devices
 - Health Care
 - Oncology
 - Scalp Cooling
@@ -43,6 +51,9 @@ apis:
   humanURL: https://www.coolerheads.com/
   baseURL: https://www.coolerheads.com/_api/mcp
   tags:
+  - MCP
+  - Agents
+  tags_raw:
   - MCP
   - Agent
   properties:
