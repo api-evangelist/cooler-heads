@@ -26,6 +26,19 @@ deliveryModel:
   - none
   generated: '2026-08-28'
   method: derived
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source:
+  - authentication
+  - security
+  generated: '2026-09-02'
+  method: derived
 image: https://static.wixstatic.com/media/6583f1_f14833176fd248229e8238fdeb4af315~mv2.jpg/v1/fill/w_1600,h_840,al_c/6583f1_f14833176fd248229e8238fdeb4af315~mv2.jpg
 url: https://raw.githubusercontent.com/api-evangelist/cooler-heads/refs/heads/main/apis.yml
 x-type: company
