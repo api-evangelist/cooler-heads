@@ -64,5 +64,92 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Cooler Heads is a company surfaced via the API Evangelist harvest backlog (source: secondary-market) and added to the network as a stub for full-pipeline profiling.
-- https://forgeglobal.com/cooler-heads_stock/
+Cooler Heads Care, Inc. is a San Diego medical device company founded in 2018 by Kate Dilligan that makes Amma, an FDA-cleared Portable Scalp Cooling System (PSCS) used to reduce chemotherapy-induced hair loss. Amma circulates chilled fluid through a fitted cap to constrict scalp blood vessels and limit chemotherapy delivery to hair follicles, and is designed to be portable enough that patients can keep cooling outside the infusion chair. The company sells to infusion centers and oncology practices and publishes patient, provider, reimbursement and training material on its own site. It ships no developer API, SDK or public API documentation; its only machine-readable public surface is the Wix-platform site MCP endpoint and llms.txt served from its own host.
+
+**Areas:** Company · Medical Devices · Healthcare · Oncology · Scalp Cooling · Patient Care · MCP
+
+## Cooler Heads on APIs.io
+
+Everything profiled for Cooler Heads is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/cooler-heads/](https://apis.io/providers/cooler-heads/)** — or go straight to one of the APIs or properties below.
+
+### APIs (1)
+
+- [Cooler Heads Site MCP](https://apis.io/apis/cooler-heads/cooler-heads-site-mcp/) — Anonymous Model Context Protocol endpoint served from the Cooler Heads web host. It is the Wix Site MCP surface (platform-provided, not a first-party Cooler…
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [Site Visitor Assistant for site "Cooler Heads Care, Inc.](https://apis.io/servers/cooler-heads/site-visitor-assistant-for-site-cooler-heads-care-inc/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Cooler Heads Authentication](https://apis.io/security/cooler-heads/cooler-heads-authentication/)
+- [Cooler Heads Domain Security](https://apis.io/security/cooler-heads/cooler-heads-domain-security/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.coolerheads.com/)
+- [Support](https://www.coolerheads.com/contact)
+- [Blog](https://www.coolerheads.com/blog)
+
+## API Evangelist rating
+
+**Kin Score 12.1** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 75.8 |
+| Contract quality | 0.0 |
+| Contract governance | 4.5 |
+| Operational transparency | 0.0 |
+| Developer ergonomics | 19.0 |
+| Access clarity | 0.0 |
+
+**Agent readiness 4.7** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | platform (partial credit) |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 13.3** — Health
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/cooler-heads/](https://apis.io/providers/cooler-heads/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Cooler Heads: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/cooler-heads/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
